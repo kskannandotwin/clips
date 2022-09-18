@@ -25,8 +25,8 @@ export class LoginComponent implements OnInit {
   async login() {
     this.showAlert = true;
     this.alertMsg = 'Please wait! We are logging you in.';
-  this.alertColor = 'blue';
-  this.inSubmission = true;
+    this.alertColor = 'blue';
+    this.inSubmission = true; 
     try {
       await this.auth.signInWithEmailAndPassword(
         this.credentials.email, this.credentials.password
@@ -42,8 +42,8 @@ export class LoginComponent implements OnInit {
     }
 
     this.alertMsg = 'Success! You are now loggin in!';
-    this.alertColor = 'green'; 
-    
+    this.alertColor = 'green';
+
   }
 
 }
