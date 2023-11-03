@@ -11,6 +11,5 @@ export class AuthModalComponent {
 
   ngOnInit() {
     this.modal.register('auth');
-    this.modal.register('test');
   }
 }
