@@ -23,6 +23,7 @@ export class TabsContainerComponent {
     });
 
     tab.active = true;
+    return false;
   }
   
 }
