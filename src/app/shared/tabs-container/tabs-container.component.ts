@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ContentChildren } from '@angular/core';
+import { TabComponent } from '../tab/tab.component';
 
 @Component({
   selector: 'app-tabs-container',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class TabsContainerComponent {
 
+  @ContentChildren(TabComponent) tabs = {};
+
+  ngAfterContentInit() {
+    console.log(this.tabs);
+  }
 }
