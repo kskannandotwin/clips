@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-tab',
@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class TabComponent {
 
+  @Input() tabTitle = '';
 }
