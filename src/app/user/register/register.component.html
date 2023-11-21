@@ -31,7 +31,7 @@
         <app-input [control]="phoneNumber" format="(000)000-0000" placeholder="Enter Phone Number"></app-input>
     </div>
     <button type="submit" class="block w-full bg-indigo-400 text-white py-1.5 px-3 rounded transition
-      hover:bg-indigo-500">
+      hover:bg-indigo-500 disabled:opacity-50 disbaled:bg-indigo-400" [disabled]="registerForm.invalid">
         Submit
     </button>
 </form>
