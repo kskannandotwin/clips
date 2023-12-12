@@ -7,7 +7,7 @@ import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 
 if (environment.production) {
-  enableProdMode();
+  // enableProdMode(); // this is disabled for the purpose of angular dev tool test
 }
 
 firebase.initializeApp(environment.firebase);
