@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class UploadComponent {
 
+  isDragOver = false;
+
+  storeFile($event: Event) {
+    this.isDragOver = false;
+  }
+
 }
