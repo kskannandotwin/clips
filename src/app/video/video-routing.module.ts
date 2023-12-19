@@ -10,12 +10,17 @@ const routes: Routes = [
     data: {
       authOnly: true
     }
-  }, {
+  },
+  {
     path: 'upload',
     component: UploadComponent,
     data: {
       authOnly: true
     }
+  },
+  {
+    path: 'manage-clips',
+    redirectTo: 'manage'
   }
 ];
 
