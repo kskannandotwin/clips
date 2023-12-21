@@ -17,6 +17,7 @@ export class UploadComponent {
   alertColor = 'blue';
   alertMsg = 'Please wait! Your clip is being uploaded.';
   inSubmission = false;
+  percentage = 0;
 
   title = new FormControl('', [
     Validators.required,
@@ -51,7 +52,11 @@ export class UploadComponent {
     const clipFileName = uuid();
     const clipPath = `clips/${clipFileName}.mp4`;
 
-    this.storage.upload(clipPath, this.file);
+    const task = this.storage.upload(clipPath, this.file);
+
+    task.percentageChanges().subscribe(progress => {
+      this.percentage = progress as number / 100;
+    });
   }
 
 }
