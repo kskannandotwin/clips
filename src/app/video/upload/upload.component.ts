@@ -37,14 +37,14 @@ export class UploadComponent {
     private storage: AngularFireStorage,
     private auth: AngularFireAuth,
     private clipService: ClipService
-    ) {
-      auth.user.subscribe(user => this.user = user);
-    }
+  ) {
+    auth.user.subscribe(user => this.user = user);
+  }
 
   storeFile($event: Event) {
     this.isDragOver = false;
 
-    this.file = ($event as DragEvent).dataTransfer?.files.item(0) ?? null;
+    this.file = ($event as DragEvent).dataTransfer ? ($event as DragEvent).dataTransfer?.files.item(0) ?? null : ($event.target as HTMLInputElement).files?.item(0) ?? null;
     if (!this.file || this.file.type !== 'video/mp4') {
       return
     }
@@ -62,7 +62,7 @@ export class UploadComponent {
     this.alertMsg = 'Please wait! Your clip is being uploaded.';
     this.inSubmission = true;
     this.showPercentage = true;
-    
+
     const clipFileName = uuid();
     const clipPath = `clips/${clipFileName}.mp4`;
 
