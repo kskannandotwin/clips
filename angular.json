@@ -22,7 +22,12 @@
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "input": "node_modules/@ffmpeg/ffmpeg/dist/umd",
+                "output": "node_modules/@ffmpeg/ffmpeg/dist/umd",
+                "glob": "*"
+              }
             ],
             "styles": [
               "src/styles.css"
