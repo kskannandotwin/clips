@@ -51,13 +51,15 @@ export class UploadComponent implements OnDestroy{
     this.task?.cancel();
   }
 
-  storeFile($event: Event) {
+  async storeFile($event: Event) {
     this.isDragOver = false;
 
     this.file = ($event as DragEvent).dataTransfer ? ($event as DragEvent).dataTransfer?.files.item(0) ?? null : ($event.target as HTMLInputElement).files?.item(0) ?? null;
     if (!this.file || this.file.type !== 'video/mp4') {
       return
     }
+
+    await this.ffmpegService.getScreenShots(this.file);
 
     this.title.setValue(
       this.file.name.replace(/\.[^/.]+$/, '')
