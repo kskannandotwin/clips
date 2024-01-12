@@ -24,8 +24,8 @@
               "src/favicon.ico",
               "src/assets",
               {
-                "input": "node_modules/@ffmpeg/ffmpeg/dist/umd",
-                "output": "node_modules/@ffmpeg/ffmpeg/dist/umd",
+                "input": "node_modules/@ffmpeg/core/dist",
+                "output": "node_modules/@ffmpeg/core/dist",
                 "glob": "*"
               }
             ],
